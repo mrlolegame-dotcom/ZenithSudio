@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ZenithSudio</title>
+    <title>ZenithSudio | Créations Roblox</title>
 
     <style>
         * {
@@ -13,224 +13,346 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background: #050914;
+            background: #080812;
             color: white;
         }
 
-        header {
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 7%;
-            background: #080d1c;
-            border-bottom: 1px solid #1d2a4a;
-            position: sticky;
-            top: 0;
-            z-index: 10;
+            background: rgba(8, 8, 18, 0.92);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid #25253d;
         }
 
         .logo {
-            font-size: 25px;
+            font-size: 24px;
             font-weight: bold;
-            color: #4da6ff;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
+            color: #8b5cf6;
         }
 
         nav a {
             color: white;
             text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #4da6ff;
+            color: #a78bfa;
         }
 
-        .login {
-            background: #1976ff;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
+        /* HERO */
         .hero {
-            min-height: 500px;
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 50px 20px;
-            background: radial-gradient(circle at center, #12356b, #050914 65%);
+            padding: 120px 20px 60px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 30%,
+                    #35206b 0%,
+                    transparent 40%
+                ),
+                #080812;
+        }
+
+        .hero-content {
+            max-width: 850px;
         }
 
         .hero h1 {
-            font-size: 60px;
+            font-size: 72px;
             margin-bottom: 20px;
-        }
 
-        .hero h1 span {
-            color: #4da6ff;
+            background:
+                linear-gradient(
+                    90deg,
+                    #8b5cf6,
+                    #c084fc,
+                    #60a5fa
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .hero p {
-            max-width: 650px;
-            color: #b8c4d9;
-            font-size: 19px;
-            line-height: 1.6;
-            margin-bottom: 30px;
+            font-size: 20px;
+            color: #b8b8c9;
+            line-height: 1.7;
+            margin-bottom: 35px;
         }
 
-        .main-button {
-            background: linear-gradient(135deg, #1976ff, #6c3cff);
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 10px;
+            background: linear-gradient(
+                135deg,
+                #7c3aed,
+                #4f46e5
+            );
             color: white;
+            text-decoration: none;
+            font-weight: bold;
             border: none;
-            padding: 16px 30px;
-            border-radius: 12px;
-            font-size: 16px;
             cursor: pointer;
-            box-shadow: 0 0 25px rgba(50, 120, 255, 0.4);
+            transition: 0.3s;
         }
 
-        .main-button:hover {
-            transform: scale(1.05);
+        .button:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 10px 35px
+                rgba(124, 58, 237, 0.5);
         }
 
-        .section {
-            padding: 60px 7%;
+        /* SECTIONS */
+        section {
+            padding: 100px 8%;
         }
 
-        .section h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
         }
 
+        .section-title span {
+            color: #8b5cf6;
+        }
+
+        /* PRODUITS */
         .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
 
         .card {
-            background: #0c1426;
-            border: 1px solid #1c2d4d;
+            background: #12121f;
+            border: 1px solid #28283d;
             border-radius: 18px;
-            padding: 20px;
+            padding: 25px;
             transition: 0.3s;
         }
 
         .card:hover {
             transform: translateY(-8px);
-            border-color: #1976ff;
-            box-shadow: 0 10px 30px rgba(0, 80, 255, 0.2);
+            border-color: #8b5cf6;
+
+            box-shadow:
+                0 15px 40px
+                rgba(124, 58, 237, 0.25);
         }
 
         .image {
-            height: 170px;
+            height: 180px;
             border-radius: 12px;
-            background: linear-gradient(135deg, #142b55, #291d59);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 55px;
             margin-bottom: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7c3aed,
+                    #1e1b4b
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 50px;
         }
 
         .card h3 {
+            font-size: 22px;
             margin-bottom: 10px;
         }
 
         .card p {
-            color: #9daac0;
-            margin-bottom: 15px;
+            color: #aaaabd;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
         .price {
-            color: #4da6ff;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
-            margin-bottom: 15px;
+            color: #c084fc;
+            margin-bottom: 20px;
         }
 
-        .buy {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            background: #1976ff;
-            color: white;
-            cursor: pointer;
+        /* À PROPOS */
+        .about {
+            background: #0e0e1a;
+            text-align: center;
         }
 
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            color: #b8b8c9;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #aaaabd;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 30px;
-            border-top: 1px solid #1d2a4a;
-            color: #7f8da5;
+            background: #05050b;
+            color: #77778a;
+            border-top: 1px solid #222234;
         }
 
+        /* MOBILE */
         @media (max-width: 700px) {
+
             nav {
-                display: none;
+                padding: 15px 5%;
+            }
+
+            nav a {
+                margin-left: 8px;
+                font-size: 12px;
             }
 
             .hero h1 {
-                font-size: 40px;
+                font-size: 48px;
             }
 
-            header {
-                padding: 18px 5%;
+            .hero p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .section-title {
+                font-size: 32px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
-    <header>
-        <div class="logo">✦ ZenithSudio</div>
+    <!-- NAVIGATION -->
 
-        <nav>
-            <a href="#">Accueil</a>
-            <a href="#">Boutique</a>
-            <a href="#">Créations</a>
-            <a href="#">À propos</a>
-        </nav>
+    <nav>
 
-        <button class="login" onclick="login()">
-            Se connecter
-        </button>
-    </header>
+        <div class="logo">
+            ✦ ZenithSudio
+        </div>
+
+        <div>
+
+            <a href="#accueil">
+                Accueil
+            </a>
+
+            <a href="#creations">
+                Créations
+            </a>
+
+            <a href="#apropos">
+                À propos
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
 
 
-    <section class="hero">
+    <!-- ACCUEIL -->
 
-        <h1>Bienvenue sur <span>ZenithSudio</span></h1>
+    <section
+        class="hero"
+        id="accueil"
+    >
 
-        <p>
-            Découvrez des créations, des modèles et des ressources
-            pour donner vie à vos projets Roblox Studio.
-        </p>
+        <div class="hero-content">
 
-        <button class="main-button" onclick="explore()">
-            Explorer la boutique
-        </button>
+            <h1>
+                ZenithSudio
+            </h1>
+
+            <p>
+                Bienvenue sur ZenithSudio.
+                Découvrez des créations,
+                des modèles et des ressources
+                pour donner vie à vos projets Roblox.
+            </p>
+
+            <a
+                href="#creations"
+                class="button"
+            >
+                Découvrir nos créations
+            </a>
+
+        </div>
 
     </section>
 
 
-    <section class="section">
+    <!-- CRÉATIONS -->
 
-        <h2>🔥 Créations populaires</h2>
+    <section
+        id="creations"
+    >
+
+        <h2 class="section-title">
+
+            Nos
+            <span>
+                Créations
+            </span>
+
+        </h2>
+
 
         <div class="products">
+
+
+            <!-- PRODUIT 1 -->
 
             <div class="card">
 
@@ -238,45 +360,61 @@
                     🎮
                 </div>
 
-                <h3>Pack Roblox Premium</h3>
+                <h3>
+                    Pack Gaming
+                </h3>
 
                 <p>
-                    Un pack de ressources pour vos projets Roblox Studio.
+                    Un pack spécialement conçu
+                    pour vos projets Roblox.
                 </p>
 
                 <div class="price">
-                    5,00 $
+                    5,00 €
                 </div>
 
-                <button class="buy" onclick="buy()">
+                <a
+                    href="mailto:Winnergamer764@gmail.com?subject=Commande%20Pack%20Gaming"
+                    class="button"
+                >
                     Acheter
-                </button>
+                </a>
 
             </div>
 
+
+            <!-- PRODUIT 2 -->
 
             <div class="card">
 
                 <div class="image">
-                    🏠
+                    🏙️
                 </div>
 
-                <h3>Maison Moderne</h3>
+                <h3>
+                    Map City
+                </h3>
 
                 <p>
-                    Une maison moderne prête à intégrer dans votre projet.
+                    Une grande ville moderne
+                    pour créer vos propres expériences.
                 </p>
 
                 <div class="price">
-                    3,00 $
+                    10,00 €
                 </div>
 
-                <button class="buy" onclick="buy()">
+                <a
+                    href="mailto:Winnergamer764@gmail.com?subject=Commande%20Map%20City"
+                    class="button"
+                >
                     Acheter
-                </button>
+                </a>
 
             </div>
 
+
+            <!-- PRODUIT 3 -->
 
             <div class="card">
 
@@ -284,52 +422,122 @@
                     🚗
                 </div>
 
-                <h3>Pack Véhicules</h3>
+                <h3>
+                    Pack Véhicules
+                </h3>
 
                 <p>
-                    Un pack de véhicules pour créer un univers incroyable.
+                    Des véhicules stylés pour
+                    vos jeux et expériences Roblox.
                 </p>
 
                 <div class="price">
-                    7,00 $
+                    7,00 €
                 </div>
 
-                <button class="buy" onclick="buy()">
+                <a
+                    href="mailto:Winnergamer764@gmail.com?subject=Commande%20Pack%20Vehicules"
+                    class="button"
+                >
                     Acheter
-                </button>
+                </a>
 
             </div>
+
 
         </div>
 
     </section>
 
 
+    <!-- À PROPOS -->
+
+    <section
+        class="about"
+        id="apropos"
+    >
+
+        <h2 class="section-title">
+
+            À propos de
+            <span>
+                ZenithSudio
+            </span>
+
+        </h2>
+
+        <p>
+
+            ZenithSudio est un studio indépendant
+            spécialisé dans la création de ressources
+            et de modèles destinés aux créateurs Roblox.
+
+            Notre objectif est de proposer des créations
+            modernes et de qualité pour vos projets.
+
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section
+        class="contact"
+        id="contact"
+    >
+
+        <h2 class="section-title">
+
+            Contactez
+            <span>
+                ZenithSudio
+            </span>
+
+        </h2>
+
+        <p>
+
+            Une question ou une demande personnalisée ?
+
+            Contactez-nous pour discuter
+            de votre projet.
+
+        </p>
+
+
+        <a
+            href="mailto:Winnergamer764@gmail.com?subject=Contact%20ZenithSudio"
+            class="button"
+        >
+
+            📧 Nous contacter
+
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
     <footer>
 
-        © 2026 ZenithSudio — Donnez vie à vos idées.
+        <p>
+
+            © 2026 ZenithSudio —
+            Tous droits réservés.
+
+        </p>
+
+        <p style="margin-top: 10px;">
+
+            Contact :
+            Winnergamer764@gmail.com
+
+        </p>
 
     </footer>
 
-
-    <script>
-
-        function login() {
-            alert("La connexion sera bientôt disponible !");
-        }
-
-        function explore() {
-            window.scrollTo({
-                top: 600,
-                behavior: "smooth"
-            });
-        }
-
-        function buy() {
-            alert("Le système de paiement sera bientôt disponible !");
-        }
-
-    </script>
 
 </body>
 </html>
