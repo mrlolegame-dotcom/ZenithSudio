@@ -4,540 +4,506 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ZenithSudio | Créations Roblox</title>
+    <title>ZenithSudio | Roblox Marketplace</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #080812;
-            color: white;
-        }
-
-        /* NAVIGATION */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(8, 8, 18, 0.92);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
-            border-bottom: 1px solid #25253d;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #8b5cf6;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #a78bfa;
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 120px 20px 60px;
-
-            background:
-                radial-gradient(
-                    circle at 50% 30%,
-                    #35206b 0%,
-                    transparent 40%
-                ),
-                #080812;
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .hero h1 {
-            font-size: 72px;
-            margin-bottom: 20px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #8b5cf6,
-                    #c084fc,
-                    #60a5fa
-                );
-
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #b8b8c9;
-            line-height: 1.7;
-            margin-bottom: 35px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 15px 30px;
-            border-radius: 10px;
-            background: linear-gradient(
-                135deg,
-                #7c3aed,
-                #4f46e5
-            );
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            transform: translateY(-4px);
-            box-shadow:
-                0 10px 35px
-                rgba(124, 58, 237, 0.5);
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 100px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 40px;
-            margin-bottom: 50px;
-        }
-
-        .section-title span {
-            color: #8b5cf6;
-        }
-
-        /* PRODUITS */
-        .products {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: #12121f;
-            border: 1px solid #28283d;
-            border-radius: 18px;
-            padding: 25px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: #8b5cf6;
-
-            box-shadow:
-                0 15px 40px
-                rgba(124, 58, 237, 0.25);
-        }
-
-        .image {
-            height: 180px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #7c3aed,
-                    #1e1b4b
-                );
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 50px;
-        }
-
-        .card h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: #aaaabd;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .price {
-            font-size: 22px;
-            font-weight: bold;
-            color: #c084fc;
-            margin-bottom: 20px;
-        }
-
-        /* À PROPOS */
-        .about {
-            background: #0e0e1a;
-            text-align: center;
-        }
-
-        .about p {
-            max-width: 700px;
-            margin: auto;
-            color: #b8b8c9;
-            font-size: 18px;
-            line-height: 1.8;
-        }
-
-        /* CONTACT */
-        .contact {
-            text-align: center;
-        }
-
-        .contact p {
-            color: #aaaabd;
-            margin-bottom: 30px;
-            font-size: 18px;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #05050b;
-            color: #77778a;
-            border-top: 1px solid #222234;
-        }
-
-        /* MOBILE */
-        @media (max-width: 700px) {
-
-            nav {
-                padding: 15px 5%;
-            }
-
-            nav a {
-                margin-left: 8px;
-                font-size: 12px;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            section {
-                padding: 70px 5%;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-    <!-- NAVIGATION -->
+<!-- PARTICULES -->
+<div class="particles"></div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <a href="#" class="logo">
+        <span>✦</span>
+        ZenithSudio
+    </a>
 
     <nav>
-
-        <div class="logo">
-            ✦ ZenithSudio
-        </div>
-
-        <div>
-
-            <a href="#accueil">
-                Accueil
-            </a>
-
-            <a href="#creations">
-                Créations
-            </a>
-
-            <a href="#apropos">
-                À propos
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </div>
-
+        <a href="#accueil">Accueil</a>
+        <a href="#boutique">Boutique</a>
+        <a href="#categories">Catégories</a>
+        <a href="#nouveautes">Nouveautés</a>
     </nav>
 
+    <div class="actions">
 
-    <!-- ACCUEIL -->
+        <button class="search-button" onclick="focusSearch()">
+            🔎
+        </button>
 
-    <section
-        class="hero"
-        id="accueil"
-    >
+        <button class="cart-button" onclick="openCart()">
+            🛒
+            <span id="cartCount">0</span>
+        </button>
 
-        <div class="hero-content">
+        <button class="login-button">
+            Connexion
+        </button>
 
-            <h1>
-                ZenithSudio
-            </h1>
+    </div>
 
-            <p>
-                Bienvenue sur ZenithSudio.
-                Découvrez des créations,
-                des modèles et des ressources
-                pour donner vie à vos projets Roblox.
-            </p>
+</header>
 
-            <a
-                href="#creations"
-                class="button"
-            >
-                Découvrir nos créations
+
+<!-- HERO -->
+<section id="accueil" class="hero">
+
+    <div class="hero-background"></div>
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🎮 ROBLOX CREATOR MARKETPLACE
+        </div>
+
+        <h1>
+            CRÉE TON
+            <span>PROPRE UNIVERS.</span>
+        </h1>
+
+        <p>
+            Découvre des créations uniques pour tes projets Roblox.
+            Maps, véhicules, bâtiments, systèmes et bien plus.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#boutique" class="main-button">
+                Explorer la boutique
+                <span>→</span>
+            </a>
+
+            <a href="#categories" class="outline-button">
+                Découvrir les catégories
             </a>
 
         </div>
 
-    </section>
+        <div class="stats">
 
-
-    <!-- CRÉATIONS -->
-
-    <section
-        id="creations"
-    >
-
-        <h2 class="section-title">
-
-            Nos
-            <span>
-                Créations
-            </span>
-
-        </h2>
-
-
-        <div class="products">
-
-
-            <!-- PRODUIT 1 -->
-
-            <div class="card">
-
-                <div class="image">
-                    🎮
-                </div>
-
-                <h3>
-                    Pack Gaming
-                </h3>
-
-                <p>
-                    Un pack spécialement conçu
-                    pour vos projets Roblox.
-                </p>
-
-                <div class="price">
-                    5,00 €
-                </div>
-
-                <a
-                    href="mailto:Winnergamer764@gmail.com?subject=Commande%20Pack%20Gaming"
-                    class="button"
-                >
-                    Acheter
-                </a>
-
+            <div>
+                <strong>500+</strong>
+                <span>Créations</span>
             </div>
 
-
-            <!-- PRODUIT 2 -->
-
-            <div class="card">
-
-                <div class="image">
-                    🏙️
-                </div>
-
-                <h3>
-                    Map City
-                </h3>
-
-                <p>
-                    Une grande ville moderne
-                    pour créer vos propres expériences.
-                </p>
-
-                <div class="price">
-                    10,00 €
-                </div>
-
-                <a
-                    href="mailto:Winnergamer764@gmail.com?subject=Commande%20Map%20City"
-                    class="button"
-                >
-                    Acheter
-                </a>
-
+            <div>
+                <strong>10K+</strong>
+                <span>Créateurs</span>
             </div>
 
-
-            <!-- PRODUIT 3 -->
-
-            <div class="card">
-
-                <div class="image">
-                    🚗
-                </div>
-
-                <h3>
-                    Pack Véhicules
-                </h3>
-
-                <p>
-                    Des véhicules stylés pour
-                    vos jeux et expériences Roblox.
-                </p>
-
-                <div class="price">
-                    7,00 €
-                </div>
-
-                <a
-                    href="mailto:Winnergamer764@gmail.com?subject=Commande%20Pack%20Vehicules"
-                    class="button"
-                >
-                    Acheter
-                </a>
-
+            <div>
+                <strong>4.9 ★</strong>
+                <span>Note moyenne</span>
             </div>
-
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- À PROPOS -->
+<!-- CATEGORIES -->
+<section id="categories" class="section">
 
-    <section
-        class="about"
-        id="apropos"
-    >
+    <div class="section-title">
 
-        <h2 class="section-title">
+        <div>
+            <span>EXPLORER</span>
+            <h2>Choisis ta catégorie</h2>
+        </div>
 
-            À propos de
-            <span>
-                ZenithSudio
-            </span>
-
-        </h2>
-
-        <p>
-
-            ZenithSudio est un studio indépendant
-            spécialisé dans la création de ressources
-            et de modèles destinés aux créateurs Roblox.
-
-            Notre objectif est de proposer des créations
-            modernes et de qualité pour vos projets.
-
-        </p>
-
-    </section>
+    </div>
 
 
-    <!-- CONTACT -->
+    <div class="categories">
 
-    <section
-        class="contact"
-        id="contact"
-    >
+        <button onclick="filterCategory('all')" class="category active">
+            <div>✨</div>
+            <strong>Tout</strong>
+            <small>500+ produits</small>
+        </button>
 
-        <h2 class="section-title">
+        <button onclick="filterCategory('map')" class="category">
+            <div>🌆</div>
+            <strong>Maps</strong>
+            <small>120 produits</small>
+        </button>
 
-            Contactez
-            <span>
-                ZenithSudio
-            </span>
+        <button onclick="filterCategory('vehicle')" class="category">
+            <div>🚗</div>
+            <strong>Véhicules</strong>
+            <small>80 produits</small>
+        </button>
 
-        </h2>
+        <button onclick="filterCategory('building')" class="category">
+            <div>🏠</div>
+            <strong>Bâtiments</strong>
+            <small>150 produits</small>
+        </button>
 
-        <p>
+        <button onclick="filterCategory('script')" class="category">
+            <div>⚙️</div>
+            <strong>Systèmes</strong>
+            <small>90 produits</small>
+        </button>
 
-            Une question ou une demande personnalisée ?
+    </div>
 
-            Contactez-nous pour discuter
-            de votre projet.
-
-        </p>
+</section>
 
 
-        <a
-            href="mailto:Winnergamer764@gmail.com?subject=Contact%20ZenithSudio"
-            class="button"
+<!-- BOUTIQUE -->
+<section id="boutique" class="section shop">
+
+    <div class="section-title">
+
+        <div>
+            <span>MARKETPLACE</span>
+            <h2>Créations populaires</h2>
+        </div>
+
+        <input
+            id="search"
+            type="text"
+            placeholder="🔎 Rechercher..."
+            oninput="searchProducts()"
         >
 
-            📧 Nous contacter
-
-        </a>
-
-    </section>
+    </div>
 
 
-    <!-- FOOTER -->
+    <div id="products" class="products">
 
-    <footer>
+
+        <!-- PRODUIT 1 -->
+        <article
+            class="product"
+            data-category="map"
+            data-name="Modern City"
+        >
+
+            <div class="product-image city">
+
+                <div class="product-badge">
+                    🔥 POPULAIRE
+                </div>
+
+                <span>🌆</span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    MAP
+                </div>
+
+                <h3>
+                    Modern City
+                </h3>
+
+                <p>
+                    Une ville moderne complète
+                    pour ton expérience Roblox.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <small>(124)</small>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        10.00 $
+                    </strong>
+
+                    <button
+                        onclick="addToCart('Modern City', 10)"
+                    >
+                        Ajouter
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUIT 2 -->
+        <article
+            class="product"
+            data-category="vehicle"
+            data-name="Super Cars Pack"
+        >
+
+            <div class="product-image cars">
+
+                <div class="product-badge new">
+                    ✨ NOUVEAU
+                </div>
+
+                <span>🏎️</span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    VÉHICULES
+                </div>
+
+                <h3>
+                    Super Cars Pack
+                </h3>
+
+                <p>
+                    Un pack de véhicules
+                    rapides et modernes.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <small>(87)</small>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        7.00 $
+                    </strong>
+
+                    <button
+                        onclick="addToCart('Super Cars Pack', 7)"
+                    >
+                        Ajouter
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUIT 3 -->
+        <article
+            class="product"
+            data-category="building"
+            data-name="Luxury House"
+        >
+
+            <div class="product-image house">
+
+                <span>🏡</span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    BÂTIMENT
+                </div>
+
+                <h3>
+                    Luxury House
+                </h3>
+
+                <p>
+                    Une maison luxueuse
+                    pour ton monde Roblox.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐☆
+                    <small>(64)</small>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        5.00 $
+                    </strong>
+
+                    <button
+                        onclick="addToCart('Luxury House', 5)"
+                    >
+                        Ajouter
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUIT 4 -->
+        <article
+            class="product"
+            data-category="script"
+            data-name="Advanced System"
+        >
+
+            <div class="product-image system">
+
+                <span>⚙️</span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    SYSTÈME
+                </div>
+
+                <h3>
+                    Advanced System
+                </h3>
+
+                <p>
+                    Un système avancé
+                    prêt à intégrer.
+                </p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                    <small>(210)</small>
+                </div>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        12.00 $
+                    </strong>
+
+                    <button
+                        onclick="addToCart('Advanced System', 12)"
+                    >
+                        Ajouter
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+
+    <div>
+
+        <span>CRÉATEURS ROBLOX</span>
+
+        <h2>
+            Prêt à créer quelque chose
+            d'incroyable ?
+        </h2>
 
         <p>
-
-            © 2026 ZenithSudio —
-            Tous droits réservés.
-
+            Rejoins la communauté ZenithSudio.
         </p>
 
-        <p style="margin-top: 10px;">
+        <button class="main-button">
+            Commencer maintenant →
+        </button>
 
-            Contact :
-            Winnergamer764@gmail.com
+    </div>
 
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-logo">
+        ✦ ZenithSudio
+    </div>
+
+    <p>
+        La marketplace des créateurs Roblox.
+    </p>
+
+    <div class="footer-links">
+        <a href="#">Conditions</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <small>
+        © 2026 ZenithSudio
+    </small>
+
+</footer>
+
+
+<!-- PANIER -->
+<div id="cart" class="cart">
+
+    <div class="cart-header">
+
+        <h2>
+            🛒 Ton panier
+        </h2>
+
+        <button onclick="closeCart()">
+            ✕
+        </button>
+
+    </div>
+
+
+    <div id="cartItems">
+
+        <p class="empty">
+            Ton panier est vide.
         </p>
 
-    </footer>
+    </div>
 
+
+    <div class="cart-footer">
+
+        <div>
+            Total
+            <strong>
+                <span id="cartTotal">0.00</span> $
+            </strong>
+        </div>
+
+        <button
+            class="main-button full"
+            onclick="checkout()"
+        >
+            Passer au paiement
+        </button>
+
+    </div>
+
+</div>
+
+
+<div
+    id="overlay"
+    class="overlay"
+    onclick="closeCart()"
+></div>
+
+
+<script src="app.js"></script>
 
 </body>
 </html>
