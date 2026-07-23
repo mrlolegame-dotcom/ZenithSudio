@@ -1,23 +1,29 @@
-function clickEffect(event){
-
+function clickEffect(e){
 
 let z=document.createElement("div");
 
 z.innerHTML="Z";
 
-z.className="click-z";
+z.style.position="fixed";
+z.style.left=e.clientX+"px";
+z.style.top=e.clientY+"px";
 
+z.style.fontSize="50px";
+z.style.color="#8b5cf6";
+z.style.fontWeight="900";
 
-z.style.left=
-event.clientX+"px";
-
-
-z.style.top=
-event.clientY+"px";
+z.style.animation="jump .8s forwards";
 
 
 document.body.appendChild(z);
 
+
+let sound=new Audio(
+"https://www.soundjay.com/buttons/sounds/button-16.mp3"
+);
+
+sound.volume=0.3;
+sound.play();
 
 
 setTimeout(()=>{
@@ -25,25 +31,5 @@ setTimeout(()=>{
 z.remove();
 
 },800);
-
-
-}
-
-
-
-function clickSound(){
-
-
-let audio =
-new Audio(
-"https://www.soundjay.com/buttons/sounds/button-16.mp3"
-);
-
-
-audio.volume=0.4;
-
-
-audio.play();
-
 
 }
