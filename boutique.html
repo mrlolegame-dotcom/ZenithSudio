@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZenithStudio Boutique</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+✦ Zenith<span>Studio</span>
+</div>
+
+
+<nav>
+
+<a href="index.html">Accueil</a>
+<a href="boutique.html">Boutique</a>
+<a href="creations.html">Créations</a>
+<a href="communaute.html">Communauté</a>
+
+</nav>
+
+
+<div class="cart">
+🛒 <span id="cartNumber">0</span>
+</div>
+
+
+</header>
+
+
+
+<section class="shop-page">
+
+
+<div class="tag">
+🔥 ZENITHSTUDIO MARKET
+</div>
+
+
+<h1>
+Boutique <span>Roblox</span>
+</h1>
+
+
+<p>
+Achète des créations professionnelles pour tes projets Roblox.
+</p>
+
+
+
+<input 
+class="search"
+id="search"
+placeholder="🔎 Rechercher..."
+onkeyup="searchProduct()"
+>
+
+
+
+<div class="categories">
+
+<button onclick="filter('all')">
+Tout
+</button>
+
+<button onclick="filter('map')">
+🏙️ Maps
+</button>
+
+<button onclick="filter('vehicle')">
+🚗 Véhicules
+</button>
+
+<button onclick="filter('house')">
+🏠 Maisons
+</button>
+
+</div>
+
+
+
+
+<div class="products">
+
+
+
+<div class="product"
+data-type="map"
+data-name="city">
+
+<div class="icon">
+🏙️
+</div>
+
+<h2>
+Modern City
+</h2>
+
+<p>
+Grande ville Roblox moderne.
+</p>
+
+<h3>
+10$
+</h3>
+
+
+<button onclick="addCart('Modern City')">
+Ajouter
+</button>
+
+</div>
+
+
+
+
+
+<div class="product"
+data-type="vehicle"
+data-name="car">
+
+
+<div class="icon">
+🚗
+</div>
+
+<h2>
+Car Pack
+</h2>
+
+<p>
+Véhicules rapides premium.
+</p>
+
+<h3>
+7$
+</h3>
+
+
+<button onclick="addCart('Car Pack')">
+Ajouter
+</button>
+
+
+</div>
+
+
+
+
+
+
+<div class="product"
+data-type="house"
+data-name="house">
+
+
+<div class="icon">
+🏠
+</div>
+
+<h2>
+Luxury House
+</h2>
+
+<p>
+Maison réaliste Roblox.
+</p>
+
+
+<h3>
+5$
+</h3>
+
+
+<button onclick="addCart('Luxury House')">
+Ajouter
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="product"
+data-type="map"
+data-name="system">
+
+
+<div class="icon">
+⚙️
+</div>
+
+
+<h2>
+Advanced System
+</h2>
+
+
+<p>
+Système professionnel.
+</p>
+
+
+<h3>
+12$
+</h3>
+
+
+<button onclick="addCart('Advanced System')">
+Ajouter
+</button>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+<footer>
+
+✦ ZenithStudio © 2026
+
+</footer>
+
+
+
+<script src="app.js"></script>
+
+
+</body>
+
+</html>
