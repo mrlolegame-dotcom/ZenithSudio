@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ZenithStudio | Roblox Creator</title>
+<title>ZenithStudio</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -14,11 +14,6 @@
 
 
 <body>
-
-
-<audio id="clickSound">
-<source src="https://www.soundjay.com/buttons/sounds/button-16.mp3">
-</audio>
 
 
 <header class="navbar">
@@ -30,19 +25,19 @@
 
 <nav>
 
-<a onclick="clickEffect(this)">
+<a href="index.html">
 Accueil
 </a>
 
-<a onclick="clickEffect(this)">
+<a href="boutique.html">
 Boutique
 </a>
 
-<a onclick="clickEffect(this)">
+<a href="creations.html">
 Créations
 </a>
 
-<a onclick="clickEffect(this)">
+<a href="communaute.html">
 Communauté
 </a>
 
@@ -52,9 +47,8 @@ Communauté
 <a 
 href="https://discord.gg/4jqYkZrfs"
 target="_blank"
-class="discord"
-onclick="clickEffect(this)"
->
+class="discord-btn"
+onclick="clickSound()">
 
 💬 Discord
 
@@ -65,21 +59,24 @@ onclick="clickEffect(this)"
 
 
 
-
 <section class="hero">
 
 
-<div class="floating-z">
+<div class="glow"></div>
+
+
+<div class="z-animation">
 Z
 </div>
 
 
+
 <h1>
 
-Crée ton
+Bienvenue chez
 
 <span>
-propre univers Roblox
+ZenithStudio
 </span>
 
 </h1>
@@ -87,161 +84,152 @@ propre univers Roblox
 
 <p>
 
-ZenithStudio crée des modèles,
-systèmes et expériences Roblox
-professionnelles.
+La plateforme des créateurs Roblox.
+Crée, découvre et partage des expériences incroyables.
 
 </p>
 
 
-<button
-class="main-btn"
-onclick="joinCommunity(this)"
->
 
-Rejoindre ZenithStudio
-
-</button>
-
-
-</section>
-
-
-
-
-
-<section class="shop">
-
-
-<h2>
-🔥 Créations populaires
-</h2>
-
-
-<div class="products">
-
-
-
-<div class="card"
-onclick="clickEffect(this)">
-
-<div class="image">
-🏙️
-</div>
-
-<h3>
-Modern City
-</h3>
-
-<p>
-Map Roblox moderne
-</p>
-
-<strong>
-10 $
-</strong>
-
-
-<button onclick="addCart('Modern City')">
-Ajouter
-</button>
-
-</div>
-
-
-
-
-<div class="card"
-onclick="clickEffect(this)">
-
-<div class="image">
-🚗
-</div>
-
-<h3>
-Car Pack
-</h3>
-
-<p>
-Véhicules Roblox
-</p>
-
-<strong>
-7 $
-</strong>
-
-
-<button onclick="addCart('Car Pack')">
-Ajouter
-</button>
-
-</div>
-
-
-
-
-
-<div class="card"
-onclick="clickEffect(this)">
-
-<div class="image">
-🏠
-</div>
-
-<h3>
-Luxury House
-</h3>
-
-<p>
-Maison premium
-</p>
-
-<strong>
-5 $
-</strong>
-
-
-<button onclick="addCart('Luxury House')">
-Ajouter
-</button>
-
-</div>
-
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section class="community">
-
-
-<h2>
-Rejoins la communauté
-</h2>
-
-
-<p>
-Discute avec les créateurs ZenithStudio.
-</p>
+<div class="buttons">
 
 
 <a 
-href="https://discord.gg/4jqYkZrfs"
-target="_blank"
-class="discord-big"
-onclick="clickEffect(this)"
->
+href="boutique.html"
+class="main-btn"
+onclick="clickEffect(event)">
 
-💙 Rejoindre Discord
+🛒 Explorer la boutique
 
 </a>
+
+
+
+<a 
+href="communaute.html"
+class="second-btn"
+onclick="clickEffect(event)">
+
+🌐 Rejoindre la communauté
+
+</a>
+
+
+</div>
+
+
+
+<div class="stats">
+
+
+<div>
+
+<strong>
+500+
+</strong>
+
+<p>
+Créations
+</p>
+
+</div>
+
+
+<div>
+
+<strong>
+10K+
+</strong>
+
+<p>
+Utilisateurs
+</p>
+
+</div>
+
+
+<div>
+
+<strong>
+4.9★
+</strong>
+
+<p>
+Note
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="features">
+
+
+<h2>
+Pourquoi ZenithStudio ?
+</h2>
+
+
+
+<div class="cards">
+
+
+
+<div class="card"
+onclick="clickEffect(event)">
+
+<h3>
+🎮 Roblox Studio
+</h3>
+
+<p>
+Des systèmes et modèles professionnels.
+</p>
+
+</div>
+
+
+
+<div class="card"
+onclick="clickEffect(event)">
+
+<h3>
+⚡ Rapide
+</h3>
+
+<p>
+Des créations prêtes à utiliser.
+</p>
+
+</div>
+
+
+
+
+<div class="card"
+onclick="clickEffect(event)">
+
+<h3>
+🚀 Communauté
+</h3>
+
+<p>
+Des créateurs passionnés.
+</p>
+
+</div>
+
+
+
+</div>
 
 
 </section>
@@ -251,6 +239,10 @@ onclick="clickEffect(this)"
 
 
 <footer>
+
+<h2>
+✦ ZenithStudio
+</h2>
 
 <p>
 © 2026 ZenithStudio
