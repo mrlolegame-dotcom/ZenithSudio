@@ -9,14 +9,18 @@ box-sizing:border-box;
 
 body{
 
-font-family:Arial,sans-serif;
+font-family:Arial, sans-serif;
 
 background:
-radial-gradient(circle at top,#312e81,#050505 60%);
+radial-gradient(
+circle at top,
+#312e81,
+#050505 60%
+);
 
 color:white;
 
-overflow-x:hidden;
+min-height:100vh;
 
 }
 
@@ -32,9 +36,12 @@ align-items:center;
 
 justify-content:space-between;
 
-padding:0 6%;
+padding:0 7%;
 
-background:#080812;
+background:
+rgba(5,5,10,.8);
+
+backdrop-filter:blur(20px);
 
 border-bottom:1px solid #333;
 
@@ -57,6 +64,7 @@ font-weight:900;
 }
 
 
+
 .logo span{
 
 color:#8b5cf6;
@@ -65,7 +73,6 @@ text-shadow:
 0 0 20px #8b5cf6;
 
 }
-
 
 
 
@@ -78,11 +85,12 @@ gap:30px;
 }
 
 
+
 nav a{
 
-cursor:pointer;
+color:#aaa;
 
-color:#bbb;
+text-decoration:none;
 
 transition:.3s;
 
@@ -97,13 +105,11 @@ color:white;
 
 
 
-
-.discord,
-.discord-big{
+.discord-btn{
 
 background:#5865F2;
 
-padding:12px 22px;
+padding:12px 20px;
 
 border-radius:12px;
 
@@ -114,11 +120,9 @@ text-decoration:none;
 font-weight:bold;
 
 box-shadow:
-0 0 20px #5865F2;
+0 0 25px #5865F2;
 
 }
-
-
 
 
 
@@ -138,20 +142,55 @@ text-align:center;
 
 position:relative;
 
+overflow:hidden;
+
 }
 
 
 
-.floating-z{
+.glow{
 
 position:absolute;
 
-font-size:200px;
+width:500px;
+
+height:500px;
+
+background:#8b5cf6;
+
+filter:blur(150px);
+
+opacity:.3;
+
+animation:pulse 4s infinite;
+
+}
+
+
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.3);
+
+}
+
+}
+
+
+
+.z-animation{
+
+position:absolute;
+
+font-size:300px;
+
+font-weight:900;
 
 opacity:.08;
 
-animation:
-float 3s infinite;
+animation:float 4s infinite;
 
 }
 
@@ -161,18 +200,19 @@ float 3s infinite;
 
 50%{
 
-transform:translateY(-30px);
+transform:translateY(-40px);
 
 }
 
 }
-
 
 
 
 .hero h1{
 
 font-size:80px;
+
+z-index:1;
 
 }
 
@@ -197,13 +237,44 @@ color:transparent;
 
 .hero p{
 
-margin:30px;
-
 font-size:20px;
 
 color:#aaa;
 
 max-width:700px;
+
+margin:30px;
+
+z-index:1;
+
+}
+
+
+
+.buttons{
+
+display:flex;
+
+gap:20px;
+
+z-index:1;
+
+}
+
+
+
+.main-btn,
+.second-btn{
+
+padding:16px 30px;
+
+border-radius:15px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
 
 }
 
@@ -218,68 +289,94 @@ linear-gradient(
 #2563eb
 );
 
-border:0;
+color:white;
 
-padding:18px 40px;
+}
 
-border-radius:15px;
+
+
+.second-btn{
+
+border:1px solid #555;
 
 color:white;
 
-font-size:20px;
+}
 
-font-weight:bold;
 
-cursor:pointer;
 
-box-shadow:
-0 0 30px #8b5cf6;
+.main-btn:hover,
+.second-btn:hover{
 
-transition:.3s;
+transform:translateY(-5px) scale(1.05);
 
 }
 
 
 
-.main-btn:hover{
+.stats{
 
-transform:scale(1.1);
+display:flex;
 
-}
+gap:70px;
 
+margin-top:70px;
 
-
-
-
-.shop{
-
-padding:80px 6%;
+z-index:1;
 
 }
 
 
 
-.shop h2{
+.stats strong{
+
+font-size:35px;
+
+}
+
+
+
+.stats p{
+
+color:#aaa;
+
+font-size:14px;
+
+}
+
+
+
+.features{
+
+padding:80px 7%;
+
+text-align:center;
+
+}
+
+
+
+.features h2{
 
 font-size:40px;
 
-margin-bottom:40px;
-
 }
 
 
 
-.products{
+.cards{
 
 display:grid;
 
 grid-template-columns:
 repeat(
-auto-fit,
-minmax(260px,1fr)
+3,
+1fr
 );
 
 gap:30px;
+
+margin-top:40px;
 
 }
 
@@ -287,9 +384,9 @@ gap:30px;
 
 .card{
 
-background:#10101c;
+background:#11111c;
 
-padding:25px;
+padding:40px;
 
 border-radius:20px;
 
@@ -297,50 +394,18 @@ border:1px solid #333;
 
 transition:.3s;
 
-cursor:pointer;
-
 }
 
 
 
 .card:hover{
 
-transform:
-translateY(-10px);
+transform:translateY(-10px);
+
+border-color:#8b5cf6;
 
 box-shadow:
 0 0 30px #8b5cf6;
-
-}
-
-
-
-
-.image{
-
-height:180px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:80px;
-
-background:#18182b;
-
-border-radius:15px;
-
-}
-
-
-
-.card h3{
-
-margin-top:20px;
-
-font-size:25px;
 
 }
 
@@ -350,74 +415,19 @@ font-size:25px;
 
 color:#aaa;
 
-margin:10px 0;
+margin-top:15px;
 
 }
-
-
-
-.card button{
-
-margin-top:20px;
-
-padding:10px 20px;
-
-background:#8b5cf6;
-
-border:0;
-
-border-radius:10px;
-
-color:white;
-
-cursor:pointer;
-
-}
-
-
-
-
-
-.community{
-
-padding:100px 20px;
-
-text-align:center;
-
-background:#080812;
-
-}
-
-
-
-.community h2{
-
-font-size:45px;
-
-margin-bottom:20px;
-
-}
-
-
-
-.discord-big{
-
-display:inline-block;
-
-margin-top:30px;
-
-padding:20px 40px;
-
-}
-
 
 
 
 footer{
 
-padding:30px;
+padding:40px;
 
 text-align:center;
+
+background:#050505;
 
 color:#777;
 
@@ -426,40 +436,32 @@ color:#777;
 
 
 
-.jump-z{
+@media(max-width:800px){
 
-position:absolute;
+nav{
 
-font-size:50px;
-
-font-weight:900;
-
-color:#8b5cf6;
-
-animation:
-jump .8s forwards;
+display:none;
 
 }
 
 
+.hero h1{
 
-@keyframes jump{
-
-0%{
-
-transform:
-translateY(0);
-
-opacity:1;
+font-size:45px;
 
 }
 
-100%{
 
-transform:
-translateY(-100px);
+.cards{
 
-opacity:0;
+grid-template-columns:1fr;
+
+}
+
+
+.stats{
+
+gap:20px;
 
 }
 
