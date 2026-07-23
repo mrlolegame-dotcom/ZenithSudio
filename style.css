@@ -431,3 +431,16 @@ display:none;
 }
 
 }
+@keyframes jump{
+
+from{
+transform:translateY(0);
+opacity:1;
+}
+
+to{
+transform:translateY(-100px);
+opacity:0;
+}
+
+}
