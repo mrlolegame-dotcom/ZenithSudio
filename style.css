@@ -466,3 +466,39 @@ gap:20px;
 }
 
 }
+.click-z{
+
+position:fixed;
+
+font-size:50px;
+
+font-weight:900;
+
+color:#8b5cf6;
+
+pointer-events:none;
+
+animation:jump .8s forwards;
+
+}
+
+
+@keyframes jump{
+
+from{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+to{
+
+transform:translateY(-100px);
+
+opacity:0;
+
+}
+
+}
