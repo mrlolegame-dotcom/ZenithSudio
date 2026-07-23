@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZenithSudio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #050914;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 7%;
+            background: #080d1c;
+            border-bottom: 1px solid #1d2a4a;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #4da6ff;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #4da6ff;
+        }
+
+        .login {
+            background: #1976ff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .hero {
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: radial-gradient(circle at center, #12356b, #050914 65%);
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #4da6ff;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #b8c4d9;
+            font-size: 19px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .main-button {
+            background: linear-gradient(135deg, #1976ff, #6c3cff);
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 0 25px rgba(50, 120, 255, 0.4);
+        }
+
+        .main-button:hover {
+            transform: scale(1.05);
+        }
+
+        .section {
+            padding: 60px 7%;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #0c1426;
+            border: 1px solid #1c2d4d;
+            border-radius: 18px;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #1976ff;
+            box-shadow: 0 10px 30px rgba(0, 80, 255, 0.2);
+        }
+
+        .image {
+            height: 170px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #142b55, #291d59);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #9daac0;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #4da6ff;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buy {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #1976ff;
+            color: white;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #1d2a4a;
+            color: #7f8da5;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            header {
+                padding: 18px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">✦ ZenithSudio</div>
+
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Boutique</a>
+            <a href="#">Créations</a>
+            <a href="#">À propos</a>
+        </nav>
+
+        <button class="login" onclick="login()">
+            Se connecter
+        </button>
+    </header>
+
+
+    <section class="hero">
+
+        <h1>Bienvenue sur <span>ZenithSudio</span></h1>
+
+        <p>
+            Découvrez des créations, des modèles et des ressources
+            pour donner vie à vos projets Roblox Studio.
+        </p>
+
+        <button class="main-button" onclick="explore()">
+            Explorer la boutique
+        </button>
+
+    </section>
+
+
+    <section class="section">
+
+        <h2>🔥 Créations populaires</h2>
+
+        <div class="products">
+
+            <div class="card">
+
+                <div class="image">
+                    🎮
+                </div>
+
+                <h3>Pack Roblox Premium</h3>
+
+                <p>
+                    Un pack de ressources pour vos projets Roblox Studio.
+                </p>
+
+                <div class="price">
+                    5,00 $
+                </div>
+
+                <button class="buy" onclick="buy()">
+                    Acheter
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="image">
+                    🏠
+                </div>
+
+                <h3>Maison Moderne</h3>
+
+                <p>
+                    Une maison moderne prête à intégrer dans votre projet.
+                </p>
+
+                <div class="price">
+                    3,00 $
+                </div>
+
+                <button class="buy" onclick="buy()">
+                    Acheter
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="image">
+                    🚗
+                </div>
+
+                <h3>Pack Véhicules</h3>
+
+                <p>
+                    Un pack de véhicules pour créer un univers incroyable.
+                </p>
+
+                <div class="price">
+                    7,00 $
+                </div>
+
+                <button class="buy" onclick="buy()">
+                    Acheter
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        © 2026 ZenithSudio — Donnez vie à vos idées.
+
+    </footer>
+
+
+    <script>
+
+        function login() {
+            alert("La connexion sera bientôt disponible !");
+        }
+
+        function explore() {
+            window.scrollTo({
+                top: 600,
+                behavior: "smooth"
+            });
+        }
+
+        function buy() {
+            alert("Le système de paiement sera bientôt disponible !");
+        }
+
+    </script>
+
+</body>
+</html>
