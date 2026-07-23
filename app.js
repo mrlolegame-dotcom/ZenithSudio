@@ -1,42 +1,19 @@
-let cart=[];
-
-
-
-function clickEffect(element){
-
-
-let sound=
-document.getElementById(
-"clickSound"
-);
-
-
-sound.currentTime=0;
-
-sound.play();
-
+function clickEffect(event){
 
 
 let z=document.createElement("div");
 
 z.innerHTML="Z";
 
-z.className="jump-z";
-
-
-let rect=
-element.getBoundingClientRect();
+z.className="click-z";
 
 
 z.style.left=
-rect.left+
-rect.width/2+
-"px";
+event.clientX+"px";
 
 
 z.style.top=
-rect.top+
-"px";
+event.clientY+"px";
 
 
 document.body.appendChild(z);
@@ -50,37 +27,23 @@ z.remove();
 },800);
 
 
-
 }
 
 
 
-
-function joinCommunity(btn){
-
-clickEffect(btn);
+function clickSound(){
 
 
-window.open(
-"https://discord.gg/4jqYkZrfs",
-"_blank"
+let audio =
+new Audio(
+"https://www.soundjay.com/buttons/sounds/button-16.mp3"
 );
 
 
-}
+audio.volume=0.4;
 
 
-
-
-function addCart(product){
-
-cart.push(product);
-
-
-alert(
-product+
-" ajouté au panier 🛒"
-);
+audio.play();
 
 
 }
