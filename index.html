@@ -1,509 +1,268 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ZenithSudio | Roblox Marketplace</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>ZenithStudio | Roblox Creator</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<!-- PARTICULES -->
-<div class="particles"></div>
 
-<!-- NAVBAR -->
+<audio id="clickSound">
+<source src="https://www.soundjay.com/buttons/sounds/button-16.mp3">
+</audio>
+
+
 <header class="navbar">
 
-    <a href="#" class="logo">
-        <span>✦</span>
-        ZenithSudio
-    </a>
+<div class="logo">
+<span>Z</span> ZenithStudio
+</div>
 
-    <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#boutique">Boutique</a>
-        <a href="#categories">Catégories</a>
-        <a href="#nouveautes">Nouveautés</a>
-    </nav>
 
-    <div class="actions">
+<nav>
 
-        <button class="search-button" onclick="focusSearch()">
-            🔎
-        </button>
+<a onclick="clickEffect(this)">
+Accueil
+</a>
 
-        <button class="cart-button" onclick="openCart()">
-            🛒
-            <span id="cartCount">0</span>
-        </button>
+<a onclick="clickEffect(this)">
+Boutique
+</a>
 
-        <button class="login-button">
-            Connexion
-        </button>
+<a onclick="clickEffect(this)">
+Créations
+</a>
 
-    </div>
+<a onclick="clickEffect(this)">
+Communauté
+</a>
+
+</nav>
+
+
+<a 
+href="https://discord.gg/4jqYkZrfs"
+target="_blank"
+class="discord"
+onclick="clickEffect(this)"
+>
+
+💬 Discord
+
+</a>
+
 
 </header>
 
 
-<!-- HERO -->
-<section id="accueil" class="hero">
 
-    <div class="hero-background"></div>
 
-    <div class="hero-content">
+<section class="hero">
 
-        <div class="badge">
-            🎮 ROBLOX CREATOR MARKETPLACE
-        </div>
 
-        <h1>
-            CRÉE TON
-            <span>PROPRE UNIVERS.</span>
-        </h1>
+<div class="floating-z">
+Z
+</div>
 
-        <p>
-            Découvre des créations uniques pour tes projets Roblox.
-            Maps, véhicules, bâtiments, systèmes et bien plus.
-        </p>
 
-        <div class="hero-buttons">
+<h1>
 
-            <a href="#boutique" class="main-button">
-                Explorer la boutique
-                <span>→</span>
-            </a>
+Crée ton
 
-            <a href="#categories" class="outline-button">
-                Découvrir les catégories
-            </a>
+<span>
+propre univers Roblox
+</span>
 
-        </div>
+</h1>
 
-        <div class="stats">
 
-            <div>
-                <strong>500+</strong>
-                <span>Créations</span>
-            </div>
+<p>
 
-            <div>
-                <strong>10K+</strong>
-                <span>Créateurs</span>
-            </div>
+ZenithStudio crée des modèles,
+systèmes et expériences Roblox
+professionnelles.
 
-            <div>
-                <strong>4.9 ★</strong>
-                <span>Note moyenne</span>
-            </div>
+</p>
 
-        </div>
 
-    </div>
+<button
+class="main-btn"
+onclick="joinCommunity(this)"
+>
+
+Rejoindre ZenithStudio
+
+</button>
+
 
 </section>
 
 
-<!-- CATEGORIES -->
-<section id="categories" class="section">
 
-    <div class="section-title">
 
-        <div>
-            <span>EXPLORER</span>
-            <h2>Choisis ta catégorie</h2>
-        </div>
 
-    </div>
+<section class="shop">
 
 
-    <div class="categories">
+<h2>
+🔥 Créations populaires
+</h2>
 
-        <button onclick="filterCategory('all')" class="category active">
-            <div>✨</div>
-            <strong>Tout</strong>
-            <small>500+ produits</small>
-        </button>
 
-        <button onclick="filterCategory('map')" class="category">
-            <div>🌆</div>
-            <strong>Maps</strong>
-            <small>120 produits</small>
-        </button>
+<div class="products">
 
-        <button onclick="filterCategory('vehicle')" class="category">
-            <div>🚗</div>
-            <strong>Véhicules</strong>
-            <small>80 produits</small>
-        </button>
 
-        <button onclick="filterCategory('building')" class="category">
-            <div>🏠</div>
-            <strong>Bâtiments</strong>
-            <small>150 produits</small>
-        </button>
 
-        <button onclick="filterCategory('script')" class="category">
-            <div>⚙️</div>
-            <strong>Systèmes</strong>
-            <small>90 produits</small>
-        </button>
+<div class="card"
+onclick="clickEffect(this)">
 
-    </div>
+<div class="image">
+🏙️
+</div>
 
-</section>
+<h3>
+Modern City
+</h3>
 
+<p>
+Map Roblox moderne
+</p>
 
-<!-- BOUTIQUE -->
-<section id="boutique" class="section shop">
+<strong>
+10 $
+</strong>
 
-    <div class="section-title">
 
-        <div>
-            <span>MARKETPLACE</span>
-            <h2>Créations populaires</h2>
-        </div>
-
-        <input
-            id="search"
-            type="text"
-            placeholder="🔎 Rechercher..."
-            oninput="searchProducts()"
-        >
-
-    </div>
-
-
-    <div id="products" class="products">
-
-
-        <!-- PRODUIT 1 -->
-        <article
-            class="product"
-            data-category="map"
-            data-name="Modern City"
-        >
-
-            <div class="product-image city">
-
-                <div class="product-badge">
-                    🔥 POPULAIRE
-                </div>
-
-                <span>🌆</span>
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-category">
-                    MAP
-                </div>
-
-                <h3>
-                    Modern City
-                </h3>
-
-                <p>
-                    Une ville moderne complète
-                    pour ton expérience Roblox.
-                </p>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                    <small>(124)</small>
-                </div>
-
-                <div class="product-bottom">
-
-                    <strong>
-                        10.00 $
-                    </strong>
-
-                    <button
-                        onclick="addToCart('Modern City', 10)"
-                    >
-                        Ajouter
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUIT 2 -->
-        <article
-            class="product"
-            data-category="vehicle"
-            data-name="Super Cars Pack"
-        >
-
-            <div class="product-image cars">
-
-                <div class="product-badge new">
-                    ✨ NOUVEAU
-                </div>
-
-                <span>🏎️</span>
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-category">
-                    VÉHICULES
-                </div>
-
-                <h3>
-                    Super Cars Pack
-                </h3>
-
-                <p>
-                    Un pack de véhicules
-                    rapides et modernes.
-                </p>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                    <small>(87)</small>
-                </div>
-
-                <div class="product-bottom">
-
-                    <strong>
-                        7.00 $
-                    </strong>
-
-                    <button
-                        onclick="addToCart('Super Cars Pack', 7)"
-                    >
-                        Ajouter
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUIT 3 -->
-        <article
-            class="product"
-            data-category="building"
-            data-name="Luxury House"
-        >
-
-            <div class="product-image house">
-
-                <span>🏡</span>
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-category">
-                    BÂTIMENT
-                </div>
-
-                <h3>
-                    Luxury House
-                </h3>
-
-                <p>
-                    Une maison luxueuse
-                    pour ton monde Roblox.
-                </p>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐☆
-                    <small>(64)</small>
-                </div>
-
-                <div class="product-bottom">
-
-                    <strong>
-                        5.00 $
-                    </strong>
-
-                    <button
-                        onclick="addToCart('Luxury House', 5)"
-                    >
-                        Ajouter
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUIT 4 -->
-        <article
-            class="product"
-            data-category="script"
-            data-name="Advanced System"
-        >
-
-            <div class="product-image system">
-
-                <span>⚙️</span>
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-category">
-                    SYSTÈME
-                </div>
-
-                <h3>
-                    Advanced System
-                </h3>
-
-                <p>
-                    Un système avancé
-                    prêt à intégrer.
-                </p>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                    <small>(210)</small>
-                </div>
-
-                <div class="product-bottom">
-
-                    <strong>
-                        12.00 $
-                    </strong>
-
-                    <button
-                        onclick="addToCart('Advanced System', 12)"
-                    >
-                        Ajouter
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-<!-- CTA -->
-<section class="cta">
-
-    <div>
-
-        <span>CRÉATEURS ROBLOX</span>
-
-        <h2>
-            Prêt à créer quelque chose
-            d'incroyable ?
-        </h2>
-
-        <p>
-            Rejoins la communauté ZenithSudio.
-        </p>
-
-        <button class="main-button">
-            Commencer maintenant →
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-
-    <div class="footer-logo">
-        ✦ ZenithSudio
-    </div>
-
-    <p>
-        La marketplace des créateurs Roblox.
-    </p>
-
-    <div class="footer-links">
-        <a href="#">Conditions</a>
-        <a href="#">Confidentialité</a>
-        <a href="#">Contact</a>
-    </div>
-
-    <small>
-        © 2026 ZenithSudio
-    </small>
-
-</footer>
-
-
-<!-- PANIER -->
-<div id="cart" class="cart">
-
-    <div class="cart-header">
-
-        <h2>
-            🛒 Ton panier
-        </h2>
-
-        <button onclick="closeCart()">
-            ✕
-        </button>
-
-    </div>
-
-
-    <div id="cartItems">
-
-        <p class="empty">
-            Ton panier est vide.
-        </p>
-
-    </div>
-
-
-    <div class="cart-footer">
-
-        <div>
-            Total
-            <strong>
-                <span id="cartTotal">0.00</span> $
-            </strong>
-        </div>
-
-        <button
-            class="main-button full"
-            onclick="checkout()"
-        >
-            Passer au paiement
-        </button>
-
-    </div>
+<button onclick="addCart('Modern City')">
+Ajouter
+</button>
 
 </div>
 
 
-<div
-    id="overlay"
-    class="overlay"
-    onclick="closeCart()"
-></div>
+
+
+<div class="card"
+onclick="clickEffect(this)">
+
+<div class="image">
+🚗
+</div>
+
+<h3>
+Car Pack
+</h3>
+
+<p>
+Véhicules Roblox
+</p>
+
+<strong>
+7 $
+</strong>
+
+
+<button onclick="addCart('Car Pack')">
+Ajouter
+</button>
+
+</div>
+
+
+
+
+
+<div class="card"
+onclick="clickEffect(this)">
+
+<div class="image">
+🏠
+</div>
+
+<h3>
+Luxury House
+</h3>
+
+<p>
+Maison premium
+</p>
+
+<strong>
+5 $
+</strong>
+
+
+<button onclick="addCart('Luxury House')">
+Ajouter
+</button>
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="community">
+
+
+<h2>
+Rejoins la communauté
+</h2>
+
+
+<p>
+Discute avec les créateurs ZenithStudio.
+</p>
+
+
+<a 
+href="https://discord.gg/4jqYkZrfs"
+target="_blank"
+class="discord-big"
+onclick="clickEffect(this)"
+>
+
+💙 Rejoindre Discord
+
+</a>
+
+
+</section>
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 ZenithStudio
+</p>
+
+</footer>
+
 
 
 <script src="app.js"></script>
 
+
 </body>
+
 </html>
