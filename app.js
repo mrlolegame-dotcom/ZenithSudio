@@ -1,339 +1,86 @@
-let cart = [];
+let cart=[];
 
 
-function addToCart(
-    name,
-    price
-) {
 
-    cart.push({
-
-        name: name,
-
-        price: price
-
-    });
+function clickEffect(element){
 
 
-    updateCart();
-
-    openCart();
-
-}
-
-
-function updateCart() {
-
-    const count =
-        document.getElementById(
-            "cartCount"
-        );
+let sound=
+document.getElementById(
+"clickSound"
+);
 
 
-    const items =
-        document.getElementById(
-            "cartItems"
-        );
+sound.currentTime=0;
+
+sound.play();
 
 
-    const total =
-        document.getElementById(
-            "cartTotal"
-        );
+
+let z=document.createElement("div");
+
+z.innerHTML="Z";
+
+z.className="jump-z";
 
 
-    count.textContent =
-        cart.length;
+let rect=
+element.getBoundingClientRect();
 
 
-    if (
-        cart.length === 0
-    ) {
-
-        items.innerHTML = `
-
-            <p class="empty">
-                Ton panier est vide.
-            </p>
-
-        `;
-
-        total.textContent =
-            "0.00";
-
-        return;
-
-    }
+z.style.left=
+rect.left+
+rect.width/2+
+"px";
 
 
-    let sum = 0;
+z.style.top=
+rect.top+
+"px";
 
 
-    items.innerHTML =
-        cart.map(
-            (
-                item,
-                index
-            ) => {
-
-                sum +=
-                    item.price;
+document.body.appendChild(z);
 
 
-                return `
 
-                    <div
-                        style="
-                        padding:15px 0;
-                        border-bottom:1px solid #242438;
-                        display:flex;
-                        justify-content:space-between;
-                        "
-                    >
+setTimeout(()=>{
 
-                        <div>
+z.remove();
 
-                            <strong>
-                                ${item.name}
-                            </strong>
-
-                            <br>
-
-                            <small>
-                                ${item.price.toFixed(2)} $
-                            </small>
-
-                        </div>
-
-                        <button
-                            onclick="removeItem(${index})"
-                            style="
-                            background:#ef4444;
-                            color:white;
-                            border:none;
-                            border-radius:6px;
-                            padding:7px;
-                            "
-                        >
-                            ✕
-                        </button>
-
-                    </div>
-
-                `;
-
-            }
-        )
-        .join("");
+},800);
 
 
-    total.textContent =
-        sum.toFixed(2);
 
 }
 
 
-function removeItem(
-    index
-) {
 
-    cart.splice(
-        index,
-        1
-    );
 
-    updateCart();
+function joinCommunity(btn){
+
+clickEffect(btn);
+
+
+window.open(
+"https://discord.gg/4jqYkZrfs",
+"_blank"
+);
+
 
 }
 
 
-function openCart() {
-
-    document
-        .getElementById(
-            "cart"
-        )
-        .classList.add(
-            "open"
-        );
 
 
-    document
-        .getElementById(
-            "overlay"
-        )
-        .classList.add(
-            "active"
-        );
+function addCart(product){
 
-}
+cart.push(product);
 
 
-function closeCart() {
+alert(
+product+
+" ajouté au panier 🛒"
+);
 
-    document
-        .getElementById(
-            "cart"
-        )
-        .classList.remove(
-            "open"
-        );
-
-
-    document
-        .getElementById(
-            "overlay"
-        )
-        .classList.remove(
-            "active"
-        );
-
-}
-
-
-function focusSearch() {
-
-    document
-        .getElementById(
-            "search"
-        )
-        .focus();
-
-
-    document
-        .getElementById(
-            "boutique"
-        )
-        .scrollIntoView({
-
-            behavior:
-                "smooth"
-
-        });
-
-}
-
-
-function searchProducts() {
-
-    const search =
-        document
-            .getElementById(
-                "search"
-            )
-            .value
-            .toLowerCase();
-
-
-    document
-        .querySelectorAll(
-            ".product"
-        )
-        .forEach(
-            product => {
-
-                const name =
-                    product
-                        .dataset
-                        .name
-                        .toLowerCase();
-
-
-                if (
-                    name.includes(
-                        search
-                    )
-                ) {
-
-                    product.style.display =
-                        "block";
-
-                } else {
-
-                    product.style.display =
-                        "none";
-
-                }
-
-            }
-        );
-
-}
-
-
-function filterCategory(
-    category
-) {
-
-    document
-        .querySelectorAll(
-            ".category"
-        )
-        .forEach(
-            button => {
-
-                button.classList.remove(
-                    "active"
-                );
-
-            }
-        );
-
-
-    event
-        .currentTarget
-        .classList.add(
-            "active"
-        );
-
-
-    document
-        .querySelectorAll(
-            ".product"
-        )
-        .forEach(
-            product => {
-
-                if (
-                    category ===
-                    "all" ||
-                    product.dataset.category ===
-                    category
-                ) {
-
-                    product.style.display =
-                        "block";
-
-                } else {
-
-                    product.style.display =
-                        "none";
-
-                }
-
-            }
-        );
-
-}
-
-
-function checkout() {
-
-    if (
-        cart.length === 0
-    ) {
-
-        alert(
-            "Ton panier est vide."
-        );
-
-        return;
-
-    }
-
-
-    alert(
-        "Le système de paiement sera connecté à Stripe / PayPal dans la prochaine étape."
-    );
 
 }
