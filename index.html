@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ZenithStudio</title>
+<title>ZenithStudio Dashboard</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -16,29 +16,63 @@
 <body>
 
 
-<div class="background"></div>
-
-
-<header>
+<div class="sidebar">
 
 <div class="logo">
 ✦ Zenith<span>Studio</span>
 </div>
 
 
-<nav>
+<a class="active">
+🏠 Accueil
+</a>
 
-<a href="#">Accueil</a>
-<a href="#">Boutique</a>
-<a href="#">Créations</a>
-<a href="#">Communauté</a>
+<a>
+🛒 Boutique
+</a>
 
-</nav>
+<a>
+🎮 Créations
+</a>
+
+<a>
+📦 Mes achats
+</a>
+
+<a>
+💳 Paiements
+</a>
+
+<a>
+⚙️ Paramètres
+</a>
 
 
-<button class="profile">
-👤 Compte
-</button>
+</div>
+
+
+
+
+<div class="main">
+
+
+<header>
+
+
+<div class="search">
+
+🔎
+
+<input placeholder="Rechercher une création...">
+
+</div>
+
+
+<div class="account">
+
+👤 Mon compte
+
+</div>
 
 
 </header>
@@ -46,77 +80,33 @@
 
 
 
-<section class="hero">
+
+<section class="banner">
 
 
-<div class="hero-text">
-
-
-<div class="tag">
-🎮 ROBLOX CREATOR PLATFORM
-</div>
-
+<div>
 
 <h1>
-
-Crée ton
-
-<br>
-
-<span>propre univers.</span>
-
+Bienvenue sur ZenithStudio
 </h1>
 
 
 <p>
-
-Découvre des créations Roblox,
-des systèmes et des modèles
-faits par des créateurs.
-
+La marketplace des créations Roblox.
 </p>
 
 
-
-<div class="buttons">
-
-
-<button onclick="clickEffect(event)" class="primary">
-
-🚀 Explorer
-
+<button onclick="clickZ(event)">
+Découvrir
 </button>
 
 
-
-<a 
-href="https://discord.gg/4jqYkZrfs"
-target="_blank"
-class="discord">
-
-💬 Discord
-
-</a>
-
-
 </div>
 
 
-</div>
-
-
-
-
-<div class="cube">
-
-
-<div>
+<div class="logo-big">
 Z
 </div>
-
-
-</div>
-
 
 
 </section>
@@ -125,11 +115,9 @@ Z
 
 
 
-<section class="popular">
-
 
 <h2>
-🔥 Créations populaires
+🔥 Produits populaires
 </h2>
 
 
@@ -138,133 +126,117 @@ Z
 
 
 
-<div class="product">
+<div class="product"
+onclick="clickZ(event)">
 
-<div class="icon">
+
+<div class="image">
 🏙️
 </div>
 
+
 <h3>
-City Pack
+Modern City
 </h3>
 
+
 <p>
-Ville Roblox moderne
+Map Roblox premium
 </p>
 
+
 <strong>
-10$
+10 Robux
 </strong>
 
+
+<button>
+Acheter
+</button>
+
+
 </div>
 
 
 
 
-<div class="product">
 
-<div class="icon">
+
+<div class="product"
+onclick="clickZ(event)">
+
+
+<div class="image">
 🚗
 </div>
+
 
 <h3>
 Vehicle Pack
 </h3>
 
+
 <p>
-Voitures premium
+Véhicules réalistes
 </p>
 
+
 <strong>
-7$
+20 Robux
 </strong>
 
+
+<button>
+Acheter
+</button>
+
+
 </div>
 
 
 
 
 
-<div class="product">
 
-<div class="icon">
-🏠
+<div class="product"
+onclick="clickZ(event)">
+
+
+<div class="image">
+⚙️
 </div>
+
 
 <h3>
-Luxury House
+Advanced System
 </h3>
 
+
 <p>
-Maison réaliste
+Système Roblox
 </p>
 
+
 <strong>
-5$
+30 Robux
 </strong>
 
+
+<button>
+Acheter
+</button>
+
+
 </div>
 
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section class="why">
-
-
-<h2>
-Pourquoi ZenithStudio ?
-</h2>
-
-
-<div class="features">
-
-
-<div>
-🎮
-<h3>Roblox</h3>
-<p>Créations pour développeurs.</p>
-</div>
-
-
-
-<div>
-⚡
-<h3>Rapide</h3>
-<p>Produits prêts à utiliser.</p>
-</div>
-
-
-
-<div>
-🔒
-<h3>Sécurisé</h3>
-<p>Plateforme fiable.</p>
-</div>
 
 
 
 </div>
 
 
-</section>
 
-
-
-
-
-<footer>
-
-✦ ZenithStudio © 2026
-
-</footer>
+</div>
 
 
 
